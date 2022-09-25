@@ -10,7 +10,7 @@ export const theme = extendTheme({
             footer: '#A6A6A6',
         },
         white: {
-            footer: '#F5F5F5',
+            second: '#F5F5F5',
             pure: '#FFFFFF',
         },
         blue: {

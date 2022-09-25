@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
-    "@chakra-ui/icons": "^2.0.10"
+    "@chakra-ui/icons": "^2.0.10",
+    "@mui/icons-material": "^5.10.6"
   }
 }
