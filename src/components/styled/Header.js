@@ -1,29 +1,27 @@
-import {Flex, Box, Text, Center} from '@chakra-ui/react'
+import {Flex, Text, Center, } from '@chakra-ui/react'
 import React from "react";
 import {MenuIcon} from "./svg/MenuIcon";
+import {Notice} from "./svg/Notice";
 
 export const Header = () => {
+
     return (
-        <Flex as={'header'} h={'60px'} w={'100vw'}
+        <Flex as={'header'} h={'60px'} w={'100%'}
               fontSize={'12px'} minW={'375px'}
               bg={'white.second'} justify={'space-between'}
         >
-            <Center ml={['20px', '20px', '16px', '40px']}>
-                <MenuIcon/>
-            </Center>
-
-            <Flex justify={'right'}>
+            <Flex w={'100%'} justify={'right'}>
                 <Center>
                     <Text color='gray.100' mr={'34.5px'}>3467 ₽</Text>
                 </Center>
-                <Center>
-                    <Text color='gray.100' mr={'10.5px'}>kol</Text>
+                <Center mr={'10.5px'}>
+                    <Notice/>
                 </Center>
                 <Center>
                     <Text color='gray.100' mr={'24px'}>username</Text>
                 </Center>
                 <Center>
-                    <Text color='gray.100' mr={['20px', '20px', '16px', '40px']}>Выйти</Text>
+                    <Text color='gray.100' mr={['0px', '0px', '0px', '20px']}>Выйти</Text>
                 </Center>
             </Flex>
         </Flex>

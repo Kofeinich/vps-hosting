@@ -1,26 +1,20 @@
-export const MenuIcon = (props) => {
+export const MenuIcon = (color) => {
     return (
         <svg
             width={20}
             height={12}
-            fill="none"
+            fill='#fff'
             xmlns="http://www.w3.org/2000/svg"
-            {...props}
         >
             <rect width={20} height={2} rx={1}
-                  style={{
-                      fill: "#062436",
-                  }}
             />
             <rect width={20} height={2} rx={1}
                   style={{
-                      fill: "#062436",
                       transform: 'translate(0px, 5px)',
                   }}
             />
             <rect width={20} height={2} rx={1}
                   style={{
-                      fill: "#062436",
                       transform: 'translate(0px, 10px)',
                   }}
             />
