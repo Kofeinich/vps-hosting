@@ -8,10 +8,10 @@ export const Header = () => {
               fontSize={'12px'} minW={'375px'}
               bg={'white.second'} justify={'space-between'}
         >
-
-            <Center color={'black'} ml={['20px', '20px', '16px', '40px']}>
+            <Center ml={['20px', '20px', '16px', '40px']}>
                 <MenuIcon/>
             </Center>
+
             <Flex justify={'right'}>
                 <Center>
                     <Text color='gray.100' mr={'34.5px'}>3467 ₽</Text>
