@@ -49,7 +49,8 @@ export const Main = () => {
                         >
                             ЗАКАЗАТЬ VPS
                         </Heading>
-                        <Text fontSize={'12px'} mt={'16px'} mb={'12px'} fontWeight={'400'} color={'gray.header'}>Категория</Text>
+                        <Text fontSize={'12px'} mt={'16px'} mb={'12px'} fontWeight={'400'}
+                              color={'gray.header'}>Категория</Text>
                         <DropDownButton width={'232px'}/>
                     </Box>
                 </Box>

@@ -6,11 +6,16 @@ import {
     Button, Text,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
-import React from "react";
+import React, {useState, useEffect} from "react";
+import {MeItem} from "./MeItem";
+import {store} from "../services/redux/store/store";
 
-export const DropDownButton = ({width}) => {
+export const DropDownButton = ({width, variant, ...props}) => {
+
+    const [chosenText, setChosenText] = useState('')
+
     return (
-        <Menu>
+        <Menu w={width}>
             <MenuButton
                 as={Button}
                 rightIcon={<ChevronDownIcon color="gray.500" />}
@@ -19,15 +24,12 @@ export const DropDownButton = ({width}) => {
                 borderRadius={'4px'}
                 border={'2px solid #939DA2'}
                 bg={'white.pure'}
+                fontSize={'16px'} fontWeight={'300px'}
             >
-                <Text fontSize={'16px'} fontWeight={'400px'} align={'left'}> Ubuntu</Text>
+                <Text align={'left'}>{chosenText}</Text>
             </MenuButton>
-            <MenuList>
-                <MenuItem>Download</MenuItem>
-                <MenuItem>Create a Copy</MenuItem>
-                <MenuItem>Mark as Draft</MenuItem>
-                <MenuItem>Delete</MenuItem>
-                <MenuItem>Attend a Workshop</MenuItem>
+            <MenuList borderRadius={'4px'} bg={'white.pure'} w={width} boxShadow={'0px 2px 10px #AFBABF'}>
+
             </MenuList>
         </Menu>
     )

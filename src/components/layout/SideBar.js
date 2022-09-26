@@ -31,8 +31,6 @@ export const SideBar = () => {
         const {widthReducer} = state;
         return widthReducer.width;
     });
-    console.log(width)
-
 
     const handleClick = () => {
         if (width.includes('211px')) {
@@ -55,7 +53,7 @@ export const SideBar = () => {
              h={'100%'} minH={'600px'}
         >
             <Box position={'absolute'} w={'100%'}>
-                <Flex as={'header'} w={'100%'} h={'84px'} justify={'space-between'} pt={'21px'} pr={'18px'} pl={'20px'}>
+                <Flex as={'header'} w={'100%'} h={'84px'} justify={'space-between'} pt={'21px'} pr={'18px'} pl={'24px'}>
                     {width.includes('211px') ? <LogoWeb/> : <></>}
                     <Box pt={'3px'} onClick={() => {
                         handleClick()
