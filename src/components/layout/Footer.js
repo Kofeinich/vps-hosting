@@ -21,13 +21,13 @@ export const Footer = () => {
             <AppleGoogle/>
             <Box>
                 <chakra.span color={'blue.primary'}>+7 (812) 334-12-22</chakra.span>
-                <chakra.span>(в Санкт-Петербурге)</chakra.span>
+                <chakra.span> (в Санкт-Петербурге)</chakra.span>
                 <br/>
                 <chakra.span color={'blue.primary'}>+7 (495) 663-16-12</chakra.span>
-                <chakra.span>(в Москве)</chakra.span>
+                <chakra.span> (в Москве)</chakra.span>
                 <br/>
                 <chakra.span color={'blue.primary'}>+7 (800) 100-16-15</chakra.span>
-                <chakra.span>(бесплатно по России)</chakra.span>
+                <chakra.span> (бесплатно по России)</chakra.span>
             </Box>
 
         </Flex>

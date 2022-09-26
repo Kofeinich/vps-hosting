@@ -27,6 +27,7 @@ export const Main = () => {
     return (
         <Box as={'main'} position={'absolute'}
              right={0} top={0}
+             minH={'100vh'}
              pr={'20px'} pl={'20px'}
              w={'calc(100% - 211px)'}
         >
