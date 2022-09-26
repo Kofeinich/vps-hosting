@@ -2,9 +2,15 @@ import {
     LOAD_DATA_SUCCESS,
     LOAD_DATA_STARTED,
     LOAD_DATA_FAILED,
+    SIDE_BAR_CLICK,
 } from '../types/types'
 
 import axios from "axios";
+
+export const clickOnSideBar = width => ({
+    type: SIDE_BAR_CLICK,
+    width
+})
 
 const loadDataSuccess = data => ({
     type: LOAD_DATA_SUCCESS,

@@ -11,7 +11,7 @@ const initialState = {
     error: null
 };
 
-export const reducer = (state = initialState, action) => {
+export const dataReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD_DATA_STARTED :
             console.log('Starting fetch')

@@ -16,7 +16,7 @@ export const Main = () => {
     useEffect(() => {
         const f = () => {
             dispatch(getDataFromApi()).then(() => {
-                store.getState().done ? setState(store.getState) : console.log(':(')
+                store.getState().dataReducer.done ? setState(store.getState().dataReducer) : console.log(':(')
             })
         }
         f()

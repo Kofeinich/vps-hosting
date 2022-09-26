@@ -15,11 +15,34 @@ import {Shop} from "../styled/svg/sidebar/Shop";
 import {Seo} from "../styled/svg/sidebar/Seo";
 import {Help} from "../styled/svg/sidebar/Help";
 import {Idea} from "../styled/svg/sidebar/Idea";
+import {useDispatch, useSelector} from "react-redux";
+import {clickOnSideBar} from "../services/redux/actions/actions";
+import {widthReducer} from "../services/redux/reducers/widthReducer";
+import {useState} from "react";
 
 export const SideBar = () => {
+
+    const dispatch = useDispatch()
+    const width = useSelector(state => {
+        const {widthReducer} = state;
+        return widthReducer.width;
+    });
+    console.log(width)
+
+    const handleClick = () => {
+        console.log('clicked' + width)
+
+        if (width.includes('211')){
+            dispatch(clickOnSideBar('68px'))
+            console.log('uhuh')
+        }else {
+            dispatch(clickOnSideBar('211px'))
+        }
+    }
+
     return (
         <Box as={'aside'} bg={'blue.second'}
-             w={'211px'} fontWeight={'700'}
+             w={width} fontWeight={'700'}
              position={'fixed'}
              zIndex={500}
              overflowY={'auto'}
@@ -29,7 +52,7 @@ export const SideBar = () => {
             <Box position={'absolute'} w={'100%'}>
                 <Flex as={'header'} w={'100%'} h={'88px'} justify={'space-between'} pt={'21px'} pr={'18px'} pl={'20px'}>
                     <LogoWeb/>
-                    <Box pt={'3px'}>
+                    <Box pt={'3px'} onClick={() => {handleClick()}}>
                         <MenuIcon color={'white.pure'}/>
                     </Box>
                 </Flex>
