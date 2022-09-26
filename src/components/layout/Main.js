@@ -7,6 +7,7 @@ import {useEffect} from 'react'
 import {getDataFromApi} from "../services/redux/actions/actions";
 import {store} from "../services/redux/store/store";
 import {DropDownButton} from "../styled/DropDownButton";
+import {Footer} from "./Footer";
 
 
 export const Main = () => {
@@ -26,7 +27,7 @@ export const Main = () => {
     return (
         <Box as={'main'} position={'absolute'}
              right={0} top={0}
-             pr={'20px'} pl={'20px'} pb={'30px'}
+             pr={'20px'} pl={'20px'}
              w={'calc(100% - 211px)'}
         >
             <Header/>
@@ -57,6 +58,7 @@ export const Main = () => {
                                                                                         key={el['id']}/>)}
                     </SimpleGrid>
                 </Flex>
+                <Footer/>
             </Box>
         </Box>
     )

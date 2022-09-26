@@ -21,7 +21,7 @@ export const SideBar = () => {
         <Box as={'aside'} bg={'blue.second'}
              w={'211px'} fontWeight={'700'}
              position={'fixed'}
-             zIndex={1000}
+             zIndex={500}
              overflowY={'auto'}
              top={0} left={0}
              h={'100%'} minH={'600px'}
