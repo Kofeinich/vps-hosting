@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import {Box, Center, Flex, Text, VStack, Button, Heading} from "@chakra-ui/react"
 import {HDD} from "../styled/svg/HDD";
 import {DropDownButton} from "../styled/DropDownButton";
@@ -7,8 +7,7 @@ import {SSD} from "../styled/svg/SSD";
 
 
 
-export const Card = () => {
-
+export const Card = (info) => {
 
     return (
             <Box as={'article'} h={'547px'}

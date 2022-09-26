@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import {Box, Center, Flex, SimpleGrid, Text, VStack, Button, Heading} from "@chakra-ui/react"
 import {Card} from "./Card";
 import {Header} from "./Header";
@@ -9,16 +9,17 @@ import {store} from "../services/redux/store/store";
 
 
 export const Main = () => {
-    const dispatch =  useDispatch()
+    const[state, setState] = useState({'':0})
+    const dispatch = useDispatch()
     useEffect(() => {
         const f = () => {
-            dispatch(getDataFromApi())
+            dispatch(getDataFromApi()).then(() =>{
+                store.getState().done ?  setState(store.getState) : console.log(':(')
+            })
         }
         f()
         setInterval(f, 600000)
     }, [])
-
-    console.log(store.getState())
 
 
 
@@ -35,16 +36,12 @@ export const Main = () => {
                   justify={'center'}
             >
                 <SimpleGrid
-                    as={'section'}  p={0}
+                    as={'section'} p={0}
                     columns={[1, 1, 3, 4]}
                     spacingX='20px' spacingY='20px'
                 >
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
+                    {state.done && state.data['result']['vpsPlans'].map(el => <Card info={el}
+                        key={el['id']}/>)}
                 </SimpleGrid>
             </Flex>
         </Box>
