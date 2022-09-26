@@ -1,17 +1,17 @@
 import {
-    SIDE_BAR_CLICK,
+    CHOOSE_CATEGORY,
 } from '../types/types'
 
 const initialState = {
-    width: '211px',
+    category: ['Все'],
 };
 
-export const widthReducer = (state = initialState, action) => {
+export const categoryReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SIDE_BAR_CLICK :
+        case CHOOSE_CATEGORY :
             return {
                 ...state,
-                width: action.width
+                category: action.category
             }
         default:
             return state;

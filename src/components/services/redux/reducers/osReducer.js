@@ -1,17 +1,17 @@
 import {
-    SIDE_BAR_CLICK,
+    CHOOSE_OS,
 } from '../types/types'
 
 const initialState = {
-    width: '211px',
+    os: ['Ubuntu 20.04 LTS'],
 };
 
-export const widthReducer = (state = initialState, action) => {
+export const osReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SIDE_BAR_CLICK :
+        case CHOOSE_OS :
             return {
                 ...state,
-                width: action.width
+                os: action.os
             }
         default:
             return state;

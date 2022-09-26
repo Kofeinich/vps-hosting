@@ -6,13 +6,19 @@ import {
     Button, Text,
 } from '@chakra-ui/react'
 import { ChevronDownIcon } from '@chakra-ui/icons'
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useReducer} from "react";
 import {MeItem} from "./MeItem";
 import {store} from "../services/redux/store/store";
+import {useDispatch, useSelector} from "react-redux";
 
-export const DropDownButton = ({width, variant, ...props}) => {
+export const DropDownButton = ({width, selectData,  }) => {
 
-    const [chosenText, setChosenText] = useState('')
+    const yourChoice = useSelector(state => {
+        const {widthReducer} = state;
+        return widthReducer.width;
+    });
+
+    const data = useSelector(selectData);
 
     return (
         <Menu w={width}>
@@ -26,10 +32,11 @@ export const DropDownButton = ({width, variant, ...props}) => {
                 bg={'white.pure'}
                 fontSize={'16px'} fontWeight={'300px'}
             >
-                <Text align={'left'}>{chosenText}</Text>
+                <Text align={'left'}>{yourChoice}</Text>
             </MenuButton>
             <MenuList borderRadius={'4px'} bg={'white.pure'} w={width} boxShadow={'0px 2px 10px #AFBABF'}>
 
+                {data.map(el => (<MeItem text={el.text} key={el['id']}/>))}
             </MenuList>
         </Menu>
     )

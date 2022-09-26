@@ -1,4 +1,9 @@
+import {useDispatch} from "react-redux";
+
 export const MeItem = ({text}) => {
+    const dispatch = useDispatch();
+
+
     return (
         <MeItem
             w={'100%'} bg={'white.pure'}

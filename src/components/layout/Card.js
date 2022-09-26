@@ -73,11 +73,11 @@ export const Card = (info) => {
                 >
                     <Box>
                         <Text mb={'8px'} color='gray.100'>Дистрибутив</Text>
-                        <DropDownButton width={'100%'} />
+                        {/*<DropDownButton width={'100%'} />*/}
                     </Box>
                     <Box>
                         <Text mb={'8px'} color='gray.100'>Программное обеспечение</Text>
-                        <DropDownButton width={'100%'}/>
+                        {/*<DropDownButton width={'100%'}/>*/}
                     </Box>
                     <Box>
                         <Text mb={'8px'} color='gray.100'>Дата-центр</Text>

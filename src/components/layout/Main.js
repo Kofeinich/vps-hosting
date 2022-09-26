@@ -51,10 +51,10 @@ export const Main = () => {
                         </Heading>
                         <Text fontSize={'12px'} mt={'16px'} mb={'12px'} fontWeight={'400'}
                               color={'gray.header'}>Категория</Text>
-                        <DropDownButton width={'232px'}/>
+                        {/*<DropDownButton width={'232px'}/>*/}
                     </Box>
                 </Box>
-                <Flex as={'section'} justify={'center'}>
+                <Flex as={'section'} justify={'left'}>
                     <SimpleGrid
                         as={'section'} p={0}
                         columns={[1, 1, 3, 4]}
