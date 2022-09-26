@@ -3,18 +3,18 @@ import {
     Box,
     VStack, Text, Center,
 } from '@chakra-ui/react'
-import {LogoWeb} from "./svg/LogoWeb";
-import {MenuIcon} from "./svg/MenuIcon";
-import {VPS} from "./svg/sidebar/VPS";
-import {Account} from "./svg/sidebar/accounts/Account";
-import {Servers} from "./svg/sidebar/Servers";
-import {Monitoring} from "./svg/sidebar/Monitoring";
-import {Domains} from "./svg/sidebar/domains/Domains";
-import {SSL} from "./svg/sidebar/SSL";
-import {Shop} from "./svg/sidebar/Shop";
-import {Seo} from "./svg/sidebar/Seo";
-import {Help} from "./svg/sidebar/Help";
-import {Idea} from "./svg/sidebar/Idea";
+import {LogoWeb} from "../styled/svg/LogoWeb";
+import {MenuIcon} from "../styled/svg/MenuIcon";
+import {VPS} from "../styled/svg/sidebar/VPS";
+import {Account} from "../styled/svg/sidebar/accounts/Account";
+import {Servers} from "../styled/svg/sidebar/Servers";
+import {Monitoring} from "../styled/svg/sidebar/Monitoring";
+import {Domains} from "../styled/svg/sidebar/domains/Domains";
+import {SSL} from "../styled/svg/sidebar/SSL";
+import {Shop} from "../styled/svg/sidebar/Shop";
+import {Seo} from "../styled/svg/sidebar/Seo";
+import {Help} from "../styled/svg/sidebar/Help";
+import {Idea} from "../styled/svg/sidebar/Idea";
 
 export const SideBar = () => {
     return (

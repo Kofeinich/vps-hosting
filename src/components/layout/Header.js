@@ -1,7 +1,7 @@
 import {Flex, Text, Center, } from '@chakra-ui/react'
 import React from "react";
-import {MenuIcon} from "./svg/MenuIcon";
-import {Notice} from "./svg/Notice";
+import {MenuIcon} from "../styled/svg/MenuIcon";
+import {Notice} from "../styled/svg/Notice";
 
 export const Header = () => {
 

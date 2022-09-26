@@ -2,20 +2,25 @@ import React from "react"
 import {Box, Center, Flex, SimpleGrid, Text, VStack, Button, Heading} from "@chakra-ui/react"
 import {Card} from "./Card";
 import {Header} from "./Header";
-import {useEffect, useState} from 'react'
-import {getData} from "../service-functions/getData";
+import {useDispatch} from "react-redux";
+import {useEffect} from 'react'
+import {getDataFromApi} from "../services/redux/actions/actions";
+import {store} from "../services/store/store";
+
 
 export const Main = () => {
-    const [data, setData] = useState({"":0})
+    const dispatch =  useDispatch()
     useEffect(() => {
         const f = () => {
-            getData().then(data => {
-                setData(data)
-            })
+            dispatch(getDataFromApi())
         }
         f()
         setInterval(f, 600000)
     }, [])
+
+    console.log(store.getState())
+
+
 
     return (
         <Box as={'main'} position={'absolute'}

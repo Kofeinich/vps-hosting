@@ -1,9 +1,9 @@
 import React from "react"
 import {Box, Center, Flex, Text, VStack, Button, Heading} from "@chakra-ui/react"
-import {HDD} from "./svg/HDD";
-import {DropDownButton} from "../../styles/DropDownButton";
-import {Turbo} from "./svg/Turbo";
-import {SSD} from "./svg/SSD";
+import {HDD} from "../styled/svg/HDD";
+import {DropDownButton} from "../styled/DropDownButton";
+import {Turbo} from "../styled/svg/Turbo";
+import {SSD} from "../styled/svg/SSD";
 
 
 
