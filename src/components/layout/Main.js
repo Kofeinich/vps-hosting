@@ -5,7 +5,7 @@ import {Header} from "./Header";
 import {useDispatch} from "react-redux";
 import {useEffect} from 'react'
 import {getDataFromApi} from "../services/redux/actions/actions";
-import {store} from "../services/store/store";
+import {store} from "../services/redux/store/store";
 
 
 export const Main = () => {
