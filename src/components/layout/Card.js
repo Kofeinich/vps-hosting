@@ -8,23 +8,38 @@ import {SSD} from "../styled/svg/SSD";
 
 
 export const Card = (info) => {
+    let logo = <></>
+    let bg = ''
+
+    if (info.info['category'] === 'nvme'){
+        logo = <SSD/>
+        bg = 'blue.ssd'
+    } else if (info.info['category'] === 'hdd'){
+        logo = <HDD/>
+        bg = 'blue.hdd'
+    } else if (info.info['category'] === 'turbo'){
+        logo = <Turbo/>
+        bg = 'blue.turbo'
+    }
+
+
 
     return (
             <Box as={'article'} h={'547px'}
                  width={['232px', '232px', '343px', '232px']}
-                 bg={'blue.ssd'}
+                 bg={bg}
                  borderRadius={'4px'}
                  p={'20px'}
                  fontSize={'12px'}
             >
                 <Flex>
-                    <SSD/>
+                    {logo}
                     <Center>
-                        <Text as={'p'} ml={'16px'}>KVM-10</Text>
+                        <Text as={'p'} ml={'16px'}>{info.info['name']}</Text>
                     </Center>
                 </Flex>
                 <Text mt={'14px'} fontWeight={'700'} fontSize={'20px'}>
-                    1 099 ₽/мес.
+                    {`${info.info['price_per_month']} ₽/мес.`}
                 </Text>
                 <VStack
                     mt={'14px'}
@@ -36,19 +51,19 @@ export const Card = (info) => {
                         <Center>
                             <Text color='gray.100'>CPU</Text>
                         </Center>
-                        <Text fontSize={'16px'} ml={'11px'} mb={'4px'}> 2 × 2,8 ГГц </Text>
+                        <Text fontSize={'16px'} ml={'11px'} mb={'4px'}> {`${info.info['cpu_cores']} × 2,8 ГГц`}</Text>
                     </Flex>
                     <Flex>
                         <Center>
                             <Text color='gray.100'>RAM</Text>
                         </Center>
-                        <Text fontSize={'16px'} ml={'11px'} mb={'4px'}> 1024 МБ </Text>
+                        <Text fontSize={'16px'} ml={'11px'} mb={'4px'}> {`${info.info['ram']} МБ`}</Text>
                     </Flex>
                     <Flex>
                         <Center>
                             <Text color='gray.100'>DISK</Text>
                         </Center>
-                        <Text fontSize={'16px'} ml={'11px'} mb={'4px'}> 10 ГБ NVMe</Text>
+                        <Text fontSize={'16px'} ml={'11px'} mb={'4px'}> {`${info.info['volume_disk']} ${info.info['disk_type']}`}</Text>
                     </Flex>
                 </VStack>
                 <VStack
@@ -58,11 +73,11 @@ export const Card = (info) => {
                 >
                     <Box>
                         <Text mb={'8px'} color='gray.100'>Дистрибутив</Text>
-                        <DropDownButton/>
+                        <DropDownButton width={'100%'}/>
                     </Box>
                     <Box>
                         <Text mb={'8px'} color='gray.100'>Программное обеспечение</Text>
-                        <DropDownButton/>
+                        <DropDownButton width={'100%'}/>
                     </Box>
                     <Box>
                         <Text mb={'8px'} color='gray.100'>Дата-центр</Text>

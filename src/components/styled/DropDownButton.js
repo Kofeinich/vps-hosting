@@ -8,14 +8,14 @@ import {
 import { ChevronDownIcon } from '@chakra-ui/icons'
 import React from "react";
 
-export const DropDownButton = () => {
+export const DropDownButton = ({width}) => {
     return (
         <Menu>
             <MenuButton
                 as={Button}
                 rightIcon={<ChevronDownIcon color="gray.500" />}
                 h={['36px', '39px', '39px', '39px']}
-                w={'100%'}
+                w={width}
                 borderRadius={'4px'}
                 border={'2px solid #939DA2'}
                 bg={'white.pure'}

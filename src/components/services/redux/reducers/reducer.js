@@ -13,13 +13,13 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'LOAD_DATA_STARTED' :
+        case LOAD_DATA_STARTED :
             console.log('Starting fetch')
             return {
                 ...state,
                 loading: true,
             }
-        case 'LOAD_DATA_SUCCESS' :
+        case LOAD_DATA_SUCCESS :
             console.log('Success!')
             return {
                 ...state,
@@ -28,7 +28,7 @@ export const reducer = (state = initialState, action) => {
                 done: true,
                 data: {...state.data, ...action.payload}
             }
-        case 'LOAD_DATA_FAILED' :
+        case LOAD_DATA_FAILED :
             console.log('Starting fetch')
             return {
                 ...state,

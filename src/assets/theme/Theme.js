@@ -12,6 +12,7 @@ export const theme = extendTheme({
         white: {
             second: '#F5F5F5',
             pure: '#FFFFFF',
+            border: '#F7FAFB',
         },
         blue: {
             ssd: '#E0F6FC',
