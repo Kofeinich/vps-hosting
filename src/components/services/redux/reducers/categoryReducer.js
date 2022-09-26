@@ -3,7 +3,7 @@ import {
 } from '../types/types'
 
 const initialState = {
-    category: ['Все'],
+    category: {},
 };
 
 export const categoryReducer = (state = initialState, action) => {

@@ -3,16 +3,14 @@ import {
 } from '../types/types'
 
 const initialState = {
-    os: ['Ubuntu 20.04 LTS'],
+    os: {},
 };
 
 export const osReducer = (state = initialState, action) => {
     switch (action.type) {
         case CHOOSE_OS :
-            return {
-                ...state,
-                os: action.os
-            }
+            state.os[action.vps_id] = action.os
+            return state
         default:
             return state;
     }

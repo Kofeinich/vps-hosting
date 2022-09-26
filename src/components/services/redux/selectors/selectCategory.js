@@ -1,5 +1,9 @@
 
 export const selectCategory = (state) => {
-    const {categoryReducer} = state;
-    return categoryReducer.category;
+    const {dataReducer} = state;
+    return dataReducer.data['categories'].map(el => {
+        return {
+            text: el['name'],
+        }
+    });
 }
