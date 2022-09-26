@@ -33,6 +33,7 @@ export const SideBar = () => {
     });
     console.log(width)
 
+
     const handleClick = () => {
         if (width.includes('211px')) {
             dispatch(clickOnSideBar('68px'))
@@ -55,7 +56,7 @@ export const SideBar = () => {
         >
             <Box position={'absolute'} w={'100%'}>
                 <Flex as={'header'} w={'100%'} h={'84px'} justify={'space-between'} pt={'21px'} pr={'18px'} pl={'20px'}>
-                    <LogoWeb/>
+                    {width.includes('211px') ? <LogoWeb/> : <></>}
                     <Box pt={'3px'} onClick={() => {
                         handleClick()
                     }}>
