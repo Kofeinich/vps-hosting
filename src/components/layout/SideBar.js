@@ -18,7 +18,6 @@ import {Idea} from "../styled/svg/sidebar/Idea";
 import {useDispatch, useSelector} from "react-redux";
 import {clickOnSideBar} from "../services/redux/actions/actions";
 import {widthReducer} from "../services/redux/reducers/widthReducer";
-import {useState} from "react";
 
 export const SideBar = () => {
 
@@ -71,7 +70,7 @@ export const SideBar = () => {
                         <Center ml={'23px'}>
                             <Account/>
                         </Center>
-                        <Center ml={'16px'}>
+                        <Center ml={'24px'}>
                             <Text color='white.pure' fontSize={'14px'}>АККАУНТ</Text>
                         </Center>
                     </Flex>
@@ -79,7 +78,7 @@ export const SideBar = () => {
                         <Center ml={'23px'}>
                             <Servers/>
                         </Center>
-                        <Center ml={'16px'}>
+                        <Center ml={'24px'}>
                             <Text color='white.pure' fontSize={'14px'}>СЕРВЕРЫ</Text>
                         </Center>
                     </Flex>
@@ -87,7 +86,7 @@ export const SideBar = () => {
                         <Center ml={'23px'}>
                             <Monitoring/>
                         </Center>
-                        <Center ml={'16px'}>
+                        <Center ml={'24px'}>
                             <Text color='white.pure' fontSize={'14px'}>МОНИТОРИНГ</Text>
                         </Center>
                     </Flex>
@@ -95,7 +94,7 @@ export const SideBar = () => {
                         <Center ml={'23px'}>
                             <Domains/>
                         </Center>
-                        <Center ml={'16px'}>
+                        <Center ml={'21px'}>
                             <Text color='white.pure' fontSize={'14px'}>ДОМЕНЫ</Text>
                         </Center>
                     </Flex>
@@ -103,15 +102,15 @@ export const SideBar = () => {
                         <Center ml={'23px'}>
                             <SSL/>
                         </Center>
-                        <Center ml={'16px'}>
+                        <Center ml={'27px'}>
                             <Text color='white.pure' fontSize={'14px'}>SSL</Text>
                         </Center>
                     </Flex>
                     <Flex h={'40px'} w={'100%'}>
-                        <Center ml={'23px'}>
+                        <Center ml={'21px'}>
                             <Shop/>
                         </Center>
-                        <Center ml={'16px'}>
+                        <Center ml={'0px'}>
                             <Text color='white.pure' fontSize={'14px'}>МАГАЗИН</Text>
                         </Center>
                     </Flex>
@@ -119,7 +118,7 @@ export const SideBar = () => {
                         <Center ml={'23px'}>
                             <Seo/>
                         </Center>
-                        <Center ml={'16px'}>
+                        <Center ml={'22px'}>
                             <Text color='white.pure' fontSize={'14px'}>SEO И РЕКЛАМА</Text>
                         </Center>
                     </Flex>
@@ -127,7 +126,7 @@ export const SideBar = () => {
                         <Center ml={'23px'}>
                             <Help/>
                         </Center>
-                        <Center ml={'16px'}>
+                        <Center ml={'12px'}>
                             <Text color='white.pure' fontSize={'14px'}>ПОДДЕРЖКА</Text>
                         </Center>
                     </Flex>
@@ -135,7 +134,7 @@ export const SideBar = () => {
                         <Center ml={'23px'}>
                             <Idea/>
                         </Center>
-                        <Center ml={'16px'}>
+                        <Center ml={'25px'}>
                             <Text color='white.pure' fontSize={'14px'}>ЕСТЬ ИДЕЯ</Text>
                         </Center>
                     </Flex>

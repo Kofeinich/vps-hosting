@@ -4,6 +4,7 @@ export const Domains = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             width={24}
             height={21}
+            viewBox={'0 0 28 21'}
             fill="none"
             {...props}
         >

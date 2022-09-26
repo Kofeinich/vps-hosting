@@ -4,6 +4,7 @@ export const SSL = (props) => {
             xmlns="http://www.w3.org/2000/svg"
             width={17}
             height={21}
+            viewBox={'0 0 16 21'}
             fill="none"
             {...props}
         >
