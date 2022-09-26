@@ -19,6 +19,7 @@ export const theme = extendTheme({
             hdd: '#C4EBF8',
             turbo: '#ECFDF7',
             primary: '#3DBDF6',
+            sidebar: '#0A3145',
             second: '#062436',
         },
         green: '#32C190',

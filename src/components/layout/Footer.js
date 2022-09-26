@@ -1,12 +1,16 @@
 import {Box, Center, Flex, SimpleGrid, Text, VStack, Button, Heading, chakra} from "@chakra-ui/react"
 import AppleGoogle from "../styled/svg/AppleGoogle";
+import {useSelector} from "react-redux";
 
 export const Footer = () => {
+    const width = useSelector(state => {
+        const {widthReducer} = state;
+        return widthReducer.width;
+    });
     return (
-
         <Flex as={'footer'} zIndex={3000} position={'absolute'}
               bottom={'-100px'} left={'0'} right={'0'} bg={'white.second'} w={'100vw'} h={'100px'}
-              ml={'-211px'} justify={'space-between'} pr={'20px'} pl={'20px'} pt={'20px'}
+              ml={`-${width}`} justify={'space-between'} pr={'20px'} pl={'20px'} pt={'20px'}
               fontSize={'12px'} fontWeight={'400'}
         >
             <Box>

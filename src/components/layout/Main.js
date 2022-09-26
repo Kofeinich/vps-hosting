@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import {Box, Center, Flex, SimpleGrid, Text, VStack, Button, Heading} from "@chakra-ui/react"
 import {Card} from "./Card";
 import {Header} from "./Header";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from 'react'
 import {getDataFromApi} from "../services/redux/actions/actions";
 import {store} from "../services/redux/store/store";
@@ -12,6 +12,10 @@ import {Footer} from "./Footer";
 
 export const Main = () => {
     const [state, setState] = useState({'': 0})
+    const width = useSelector(state => {
+        const {widthReducer} = state;
+        return widthReducer.width;
+    });
     const dispatch = useDispatch()
     useEffect(() => {
         const f = () => {
@@ -29,7 +33,7 @@ export const Main = () => {
              right={0} top={0}
              minH={'100vh'}
              pr={'20px'} pl={'20px'}
-             w={'calc(100% - 211px)'}
+             w={`calc(100% - ${width})`}
         >
             <Header/>
             <Box as={'section'}

@@ -9,7 +9,6 @@ import {VPS} from "../styled/svg/sidebar/VPS";
 import {Account} from "../styled/svg/sidebar/accounts/Account";
 import {Servers} from "../styled/svg/sidebar/Servers";
 import {Monitoring} from "../styled/svg/sidebar/Monitoring";
-import {Domains} from "../styled/svg/sidebar/domains/Domains";
 import {SSL} from "../styled/svg/sidebar/SSL";
 import {Shop} from "../styled/svg/sidebar/Shop";
 import {Seo} from "../styled/svg/sidebar/Seo";
@@ -17,7 +16,13 @@ import {Help} from "../styled/svg/sidebar/Help";
 import {Idea} from "../styled/svg/sidebar/Idea";
 import {useDispatch, useSelector} from "react-redux";
 import {clickOnSideBar} from "../services/redux/actions/actions";
-import {widthReducer} from "../services/redux/reducers/widthReducer";
+import {Domains} from "../styled/svg/sidebar/domains/Domains";
+import {DomainsHiddenList} from "../styled/DomainsHiddenList";
+import {useState} from "react";
+import {AccountHiddenList} from "../styled/AccountHiddenList";
+
+
+
 
 export const SideBar = () => {
 
@@ -29,15 +34,15 @@ export const SideBar = () => {
     console.log(width)
 
     const handleClick = () => {
-        console.log('clicked' + width)
-
-        if (width.includes('211')){
+        if (width.includes('211px')) {
             dispatch(clickOnSideBar('68px'))
-            console.log('uhuh')
-        }else {
+        } else {
             dispatch(clickOnSideBar('211px'))
         }
     }
+    const [domainVisible, setDomainVisible] = useState(false)
+
+    const [accountVisible, setAccountVisible] = useState(false)
 
     return (
         <Box as={'aside'} bg={'blue.second'}
@@ -49,16 +54,26 @@ export const SideBar = () => {
              h={'100%'} minH={'600px'}
         >
             <Box position={'absolute'} w={'100%'}>
-                <Flex as={'header'} w={'100%'} h={'88px'} justify={'space-between'} pt={'21px'} pr={'18px'} pl={'20px'}>
+                <Flex as={'header'} w={'100%'} h={'84px'} justify={'space-between'} pt={'21px'} pr={'18px'} pl={'20px'}>
                     <LogoWeb/>
-                    <Box pt={'3px'} onClick={() => {handleClick()}}>
+                    <Box pt={'3px'} onClick={() => {
+                        handleClick()
+                    }}>
                         <MenuIcon color={'white.pure'}/>
                     </Box>
                 </Flex>
                 <VStack
                     align={'left'}
+                    m={'0px'}
+                    spacing={0}
                 >
-                    <Flex h={'40px'} w={'100%'}>
+                    <Flex h={'35px'} w={'100%'} bg={'blue.primary'}
+                          mt={'0rem'}
+                          _hover={{
+                              bg: 'blue.sidebar',
+                              cursor: 'pointer'
+                          }}
+                    >
                         <Center ml={'23px'}>
                             <VPS/>
                         </Center>
@@ -66,7 +81,15 @@ export const SideBar = () => {
                             <Text color='white.pure' fontSize={'14px'}>Заказать VPS</Text>
                         </Center>
                     </Flex>
-                    <Flex h={'40px'} w={'100%'}>
+                    <Flex h={'40px'} w={'100%'}
+                          _hover={{
+                              bg: 'blue.sidebar',
+                              cursor: 'pointer'
+                          }}
+                          onClick={() =>{
+                              setAccountVisible(!accountVisible)
+                          }}
+                    >
                         <Center ml={'23px'}>
                             <Account/>
                         </Center>
@@ -74,7 +97,13 @@ export const SideBar = () => {
                             <Text color='white.pure' fontSize={'14px'}>АККАУНТ</Text>
                         </Center>
                     </Flex>
-                    <Flex h={'40px'} w={'100%'}>
+                    <AccountHiddenList visible={accountVisible}/>
+                    <Flex h={'40px'} w={'100%'}
+                          _hover={{
+                              bg: 'blue.sidebar',
+                              cursor: 'pointer'
+                          }}
+                    >
                         <Center ml={'23px'}>
                             <Servers/>
                         </Center>
@@ -82,7 +111,12 @@ export const SideBar = () => {
                             <Text color='white.pure' fontSize={'14px'}>СЕРВЕРЫ</Text>
                         </Center>
                     </Flex>
-                    <Flex h={'40px'} w={'100%'}>
+                    <Flex h={'40px'} w={'100%'}
+                          _hover={{
+                              bg: 'blue.sidebar',
+                              cursor: 'pointer'
+                          }}
+                    >
                         <Center ml={'23px'}>
                             <Monitoring/>
                         </Center>
@@ -90,7 +124,15 @@ export const SideBar = () => {
                             <Text color='white.pure' fontSize={'14px'}>МОНИТОРИНГ</Text>
                         </Center>
                     </Flex>
-                    <Flex h={'40px'} w={'100%'}>
+                    <Flex h={'40px'} w={'100%'}
+                          _hover={{
+                              bg: 'blue.sidebar',
+                              cursor: 'pointer'
+                          }}
+                          onClick={() =>{
+                              setDomainVisible(!domainVisible)
+                          }}
+                    >
                         <Center ml={'23px'}>
                             <Domains/>
                         </Center>
@@ -98,15 +140,27 @@ export const SideBar = () => {
                             <Text color='white.pure' fontSize={'14px'}>ДОМЕНЫ</Text>
                         </Center>
                     </Flex>
-                    <Flex h={'40px'} w={'100%'}>
+                    <DomainsHiddenList visible={domainVisible}/>
+
+                    <Flex h={'40px'} w={'100%'}
+                          _hover={{
+                              bg: 'blue.sidebar',
+                              cursor: 'pointer'
+                          }}
+                    >
                         <Center ml={'23px'}>
                             <SSL/>
                         </Center>
-                        <Center ml={'27px'}>
+                        <Center ml={'28px'}>
                             <Text color='white.pure' fontSize={'14px'}>SSL</Text>
                         </Center>
                     </Flex>
-                    <Flex h={'40px'} w={'100%'}>
+                    <Flex h={'40px'} w={'100%'}
+                          _hover={{
+                              bg: 'blue.sidebar',
+                              cursor: 'pointer'
+                          }}
+                    >
                         <Center ml={'21px'}>
                             <Shop/>
                         </Center>
@@ -114,27 +168,42 @@ export const SideBar = () => {
                             <Text color='white.pure' fontSize={'14px'}>МАГАЗИН</Text>
                         </Center>
                     </Flex>
-                    <Flex h={'40px'} w={'100%'}>
+                    <Flex h={'40px'} w={'100%'}
+                          _hover={{
+                              bg: 'blue.sidebar',
+                              cursor: 'pointer'
+                          }}
+                    >
                         <Center ml={'23px'}>
                             <Seo/>
                         </Center>
-                        <Center ml={'22px'}>
+                        <Center ml={'23px'}>
                             <Text color='white.pure' fontSize={'14px'}>SEO И РЕКЛАМА</Text>
                         </Center>
                     </Flex>
-                    <Flex h={'40px'} w={'100%'}>
+                    <Flex h={'40px'} w={'100%'}
+                          _hover={{
+                              bg: 'blue.sidebar',
+                              cursor: 'pointer'
+                          }}
+                    >
                         <Center ml={'23px'}>
                             <Help/>
                         </Center>
-                        <Center ml={'12px'}>
+                        <Center ml={'13px'}>
                             <Text color='white.pure' fontSize={'14px'}>ПОДДЕРЖКА</Text>
                         </Center>
                     </Flex>
-                    <Flex h={'40px'} w={'100%'}>
+                    <Flex h={'40px'} w={'100%'}
+                          _hover={{
+                              bg: 'blue.sidebar',
+                              cursor: 'pointer'
+                          }}
+                    >
                         <Center ml={'23px'}>
                             <Idea/>
                         </Center>
-                        <Center ml={'25px'}>
+                        <Center ml={'26px'}>
                             <Text color='white.pure' fontSize={'14px'}>ЕСТЬ ИДЕЯ</Text>
                         </Center>
                     </Flex>
