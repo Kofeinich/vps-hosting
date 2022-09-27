@@ -12,16 +12,23 @@ import axios from "axios";
 
 export const chooseCategory = category => ({
     type: CHOOSE_CATEGORY,
-    category
+    payload : {
+        ...category
+    }
 })
+
 export const chooseOS = (os, vps_id) => ({
     type: CHOOSE_OS,
-    os: os,
+    payload: {
+        ...os
+    },
     vps_id: vps_id
 })
 export const chooseSoftware = (software, vps_id) => ({
     type: CHOOSE_SOFTWARE,
-    software: software,
+    payload: {
+        ...software
+    },
     vps_id: vps_id
 })
 

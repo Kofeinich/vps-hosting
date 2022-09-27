@@ -1,15 +1,13 @@
-import {useDispatch} from "react-redux";
+import {MenuItem, Text} from "@chakra-ui/react";
 
 export const MeItem = ({text}) => {
-    const dispatch = useDispatch();
-
+    // const dispatch = useDispatch();
 
     return (
-        <MeItem
+        <MenuItem
             w={'100%'} bg={'white.pure'}
-            color={'black'} h={'31px'}
-            fontSize={'16px'} fontWeight={'400'}
-            pr={'16px'} pt={'8px'} pl={'16px'}
+            color={'black'} h={'44px'}
+            fontSize={'16px'} fontWeight={'300px'}
             align={'left'}
             _hover={{
                 bg: 'blue.primary',
@@ -20,7 +18,7 @@ export const MeItem = ({text}) => {
                 border: '2px solid #339AC8'
             }}
         >
-            {text}
-        </MeItem>
+            <Text p={'0'}>{text}</Text>
+        </MenuItem>
     )
 }

@@ -11,7 +11,7 @@ export const categoryReducer = (state = initialState, action) => {
         case CHOOSE_CATEGORY :
             return {
                 ...state,
-                category: action.category
+                category: {...state.category,...action.payload}
             }
         default:
             return state;

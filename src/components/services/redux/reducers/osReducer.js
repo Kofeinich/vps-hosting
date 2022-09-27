@@ -10,7 +10,10 @@ export const osReducer = (state = initialState, action) => {
     switch (action.type) {
         case CHOOSE_OS :
             state.os[action.vps_id] = action.os
-            return state
+            return {
+                ...state,
+                os: {...state.os, ...action.payload}
+            }
         default:
             return state;
     }

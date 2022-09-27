@@ -4,7 +4,8 @@ import {HDD} from "../styled/svg/HDD";
 import {DropDownButton} from "../styled/DropDownButton";
 import {Turbo} from "../styled/svg/Turbo";
 import {SSD} from "../styled/svg/SSD";
-
+import {selectSoftware} from "../services/redux/selectors/selectSoftware";
+import {selectOS} from "../services/redux/selectors/selectOS";
 
 
 export const Card = (info) => {
@@ -73,11 +74,11 @@ export const Card = (info) => {
                 >
                     <Box>
                         <Text mb={'8px'} color='gray.100'>Дистрибутив</Text>
-                        {/*<DropDownButton width={'100%'} />*/}
+                        <DropDownButton width={'100%'} selectData={selectOS}/>
                     </Box>
                     <Box>
                         <Text mb={'8px'} color='gray.100'>Программное обеспечение</Text>
-                        {/*<DropDownButton width={'100%'}/>*/}
+                        <DropDownButton width={'100%'} selectData={selectSoftware}/>
                     </Box>
                     <Box>
                         <Text mb={'8px'} color='gray.100'>Дата-центр</Text>

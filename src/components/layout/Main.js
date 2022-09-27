@@ -8,10 +8,11 @@ import {getDataFromApi} from "../services/redux/actions/actions";
 import {store} from "../services/redux/store/store";
 import {DropDownButton} from "../styled/DropDownButton";
 import {Footer} from "./Footer";
+import {selectCategory} from "../services/redux/selectors/selectCategory";
 
 
 export const Main = () => {
-    const [state, setState] = useState({'': 0})
+    const [cur, setCur] = useState({'': 0})
     const width = useSelector(state => {
         const {widthReducer} = state;
         return widthReducer.width;
@@ -20,12 +21,13 @@ export const Main = () => {
     useEffect(() => {
         const f = () => {
             dispatch(getDataFromApi()).then(() => {
-                store.getState().dataReducer.done ? setState(store.getState().dataReducer) : console.log(':(')
+                store.getState().dataReducer.done ? setCur(store.getState().dataReducer) : console.log(':(')
             })
         }
         f()
         setInterval(f, 600000)
     }, [])
+
 
 
     return (
@@ -51,7 +53,7 @@ export const Main = () => {
                         </Heading>
                         <Text fontSize={'12px'} mt={'16px'} mb={'12px'} fontWeight={'400'}
                               color={'gray.header'}>Категория</Text>
-                        {/*<DropDownButton width={'232px'}/>*/}
+                        <DropDownButton width={'232px'} selectData={selectCategory}/>
                     </Box>
                 </Box>
                 <Flex as={'section'} justify={'left'}>
@@ -60,7 +62,7 @@ export const Main = () => {
                         columns={[1, 1, 3, 4]}
                         spacingX='20px' spacingY='20px'
                     >
-                        {state.done && state.data['result']['vpsPlans'].map(el => <Card info={el}
+                        {cur.done && cur.data['result']['vpsPlans'].map(el => <Card info={el}
                                                                                         key={el['id']}/>)}
                     </SimpleGrid>
                 </Flex>

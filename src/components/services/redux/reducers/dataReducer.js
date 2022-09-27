@@ -7,7 +7,7 @@ import {
 const initialState = {
     done: false,
     loading: false,
-    data: {'':0},
+    data: {},
     error: null
 };
 
