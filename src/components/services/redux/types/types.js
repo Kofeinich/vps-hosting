@@ -6,3 +6,4 @@ export const SIDE_BAR_CLICK = 'SIDE_BAR_CLICK ';
 export const CHOOSE_CATEGORY = 'CHOOSE_CATEGORY';
 export const CHOOSE_OS = 'CHOOSE_OS ';
 export const CHOOSE_SOFTWARE = 'CHOOSE_SOFTWARE';
+export const CHOOSE_ITEM = 'CHOOSE_ITEM';

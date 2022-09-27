@@ -29,7 +29,6 @@ export const Main = () => {
     }, [])
 
 
-
     return (
         <Box as={'main'} position={'absolute'}
              right={0} top={0}
@@ -53,7 +52,10 @@ export const Main = () => {
                         </Heading>
                         <Text fontSize={'12px'} mt={'16px'} mb={'12px'} fontWeight={'400'}
                               color={'gray.header'}>Категория</Text>
-                        <DropDownButton width={'232px'} selectData={selectCategory}/>
+                        <DropDownButton
+                            width={'232px'} variant={'Все'}
+                            selectData={selectCategory}
+                        />
                     </Box>
                 </Box>
                 <Flex as={'section'} justify={'left'}>
@@ -63,7 +65,7 @@ export const Main = () => {
                         spacingX='20px' spacingY='20px'
                     >
                         {cur.done && cur.data['result']['vpsPlans'].map(el => <Card info={el}
-                                                                                        key={el['id']}/>)}
+                                                                                    key={el['id']}/>)}
                     </SimpleGrid>
                 </Flex>
                 <Footer/>

@@ -3,12 +3,12 @@ import {dataReducer} from "./dataReducer";
 import {widthReducer} from "./widthReducer";
 import {osReducer} from "./osReducer";
 import {softwareReducer} from "./softwareReducer";
-import {categoryReducer} from "./categoryReducer";
+import {itemReducer} from "./itemReducer";
 
 export const rootReducer = combineReducers({
     dataReducer,
     widthReducer,
     osReducer,
-    categoryReducer,
+    categoryReducer: itemReducer,
     softwareReducer,
 })

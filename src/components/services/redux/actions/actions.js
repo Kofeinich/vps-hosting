@@ -5,16 +5,15 @@ import {
     SIDE_BAR_CLICK,
     CHOOSE_SOFTWARE,
     CHOOSE_CATEGORY,
+    CHOOSE_ITEM,
     CHOOSE_OS,
 } from '../types/types'
 
 import axios from "axios";
 
-export const chooseCategory = category => ({
-    type: CHOOSE_CATEGORY,
-    payload : {
-        ...category
-    }
+export const chooseItem = (itemText, itemId) => ({
+    type: CHOOSE_ITEM,
+    itemText,
 })
 
 export const chooseOS = (os, vps_id) => ({

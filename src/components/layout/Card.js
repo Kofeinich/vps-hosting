@@ -74,11 +74,17 @@ export const Card = (info) => {
                 >
                     <Box>
                         <Text mb={'8px'} color='gray.100'>Дистрибутив</Text>
-                        <DropDownButton width={'100%'} selectData={selectOS}/>
+                        <DropDownButton
+                            width={'100%'} variant={'Ubuntu 20.04 LTS'}
+                            selectData={selectOS}
+                        />
                     </Box>
                     <Box>
                         <Text mb={'8px'} color='gray.100'>Программное обеспечение</Text>
-                        <DropDownButton width={'100%'} selectData={selectSoftware}/>
+                        <DropDownButton
+                            width={'100%'} variant={'Без ПО'}
+                            selectData={selectSoftware}
+                        />
                     </Box>
                     <Box>
                         <Text mb={'8px'} color='gray.100'>Дата-центр</Text>

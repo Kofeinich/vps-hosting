@@ -4,22 +4,31 @@ import {
     MenuList,
     Button, Text,
 } from '@chakra-ui/react'
-import { ChevronDownIcon } from '@chakra-ui/icons'
-import React, {useState} from "react";
+import {ChevronDownIcon} from '@chakra-ui/icons'
+import React, {useEffect, useState} from "react";
 import {MeItem} from "./MeItem";
 import {useDispatch, useSelector} from "react-redux";
 
-export const DropDownButton = ({width, selectData,  }) => {
+export const DropDownButton = ({width, selectData, variant}) => {
+
+    const [text, setText] = useState(variant)
 
     let data = useSelector(selectData);
 
-    console.log(data)
+    let content = useSelector(state => {
+        const {itemReducer} = state;
+        console.log(itemReducer)
+        if (typeof itemReducer !== "undefined"){
+            return itemReducer.content;
+        } else { return ''}
+    })
+
 
     return (
         <Menu w={width}>
             <MenuButton
                 as={Button}
-                rightIcon={<ChevronDownIcon color="gray.500" />}
+                rightIcon={<ChevronDownIcon color="gray.500"/>}
                 h={['36px', '39px', '39px', '39px']}
                 w={width}
                 borderRadius={'4px'}
@@ -27,10 +36,10 @@ export const DropDownButton = ({width, selectData,  }) => {
                 bg={'white.pure'}
                 fontSize={'16px'} fontWeight={'300px'}
             >
-                <Text align={'left'}>dscew</Text>
+                <Text align={'left'}>{text}</Text>
             </MenuButton>
             <MenuList p={'0px'} borderRadius={'4px'} bg={'white.pure'} w={width} boxShadow={'0px 2px 10px #AFBABF'}>
-                { data.map(el => <MeItem text={el.text} key={el['id']}/>)}
+                {data.map(el => <MeItem variant={variant} text={el.text} id={el['id']} key={el['id']}/>)}
             </MenuList>
         </Menu>
     )

@@ -1,7 +1,14 @@
 import {MenuItem, Text} from "@chakra-ui/react";
+import {useDispatch} from "react-redux";
+import {chooseItem} from "../services/redux/actions/actions";
 
-export const MeItem = ({text}) => {
-    // const dispatch = useDispatch();
+
+export const MeItem = ({text, id}) => {
+    const dispatch = useDispatch();
+
+    const handleClick = () => {
+        dispatch(chooseItem(text, id))
+    }
 
     return (
         <MenuItem
@@ -16,6 +23,9 @@ export const MeItem = ({text}) => {
             }}
             _active={{
                 border: '2px solid #339AC8'
+            }}
+            onClick={() => {
+                handleClick()
             }}
         >
             <Text p={'0'}>{text}</Text>

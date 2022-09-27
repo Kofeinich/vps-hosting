@@ -36,7 +36,6 @@ export const dataReducer = (state = initialState, action) => {
                 done: false,
                 error: action.payload.error
             }
-
         default:
             return state;
     }
